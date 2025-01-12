@@ -4,7 +4,7 @@ pipeline {
     environment {
         ANSIBLE_CONFIG = '/etc/ansible/ansible.cfg'  // Adjust as necessary
         ANSIBLE_PLAYBOOK = 'install-grafana.yml'     // Relative file name of the playbook
-        ANSIBLE_ROLE_PATH = '/root/'                 // Path to your roles, if not in default location
+        ANSIBLE_ROLE_PATH = '/root'                 // Path to your roles, if not in default location
     }
 
     stages {
