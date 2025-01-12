@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'dev' }  // Specify the agent with the label 'dev'
+    agent any // Specify the agent with the label 'dev'
 
     environment {
         ANSIBLE_CONFIG = '/etc/ansible/ansible.cfg'  // Adjust as necessary
