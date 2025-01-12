@@ -1,13 +1,6 @@
 pipeline {
     agent { label 'dev' }  // Specify the agent with the label 'dev'
-
-    environment {
-        ANSIBLE_CONFIG = '/etc/ansible/ansible.cfg'  // Adjust as necessary
-        ANSIBLE_PLAYBOOK = 'install_grafana.yml'     // Playbook file name
-        ANSIBLE_ROLE_PATH = '/root/'                 // Path to your roles, if not in default location
-    }
-
-    stages {
+      stages {
         stage('Checkout Code') {
             steps {
                 // Checkout your repository that contains the Ansible playbook and roles
@@ -19,7 +12,7 @@ pipeline {
             steps {
                 script {
                     // Running the Ansible playbook to install Grafana
-                    sh 'sudo ansible-playbook ${ANSIBLE_PLAYBOOK}'
+                    sh 'sudo ansible-playbook /root/install-grafana.yml'
                 }
             }
         }
